@@ -1,21 +1,23 @@
+{% load  static  %}
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Jobs Nepal</title>
-	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<link rel="stylesheet" type="text/css" href="{% static '/css/login.css'%}">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
+</head> 
 <body>
-	<img class="wave" src="img/wave.png">
+	<img class="wave" src="{% static 'img/wave.png' %}">
 	<div class="container">
 		<div class="img">
-			<img src="img/002.svg">
+			<img src="{% static 'img/002.svg' %}">
 		</div>
 		<div class="login-content">
 			<form action="index.html">
-				<img src="img/avatar.svg">
+			{% csrf_token %}
+				<img src="{% static 'img/avatar.svg' %}">
 				<h2 class="title">Welcome</h2>
            		<div class="input-div one">
            		   <div class="i">
@@ -23,7 +25,7 @@
            		   </div>
            		   <div class="div">
            		   		<h5>Username</h5>
-           		   		<input type="text" class="input" required>
+           		   		{{form.username}}
            		   </div>
            		</div>
            		<div class="input-div pass">
@@ -32,7 +34,7 @@
            		   </div>
            		   <div class="div">
            		    	<h5>Password</h5>
-           		    	<input type="password" class="input" required>
+           		    	{{form.password}}
             	   </div>
             	</div>
             	<a href="#">Forgot Password?</a>
@@ -43,3 +45,7 @@
     <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
+
+
+
+
