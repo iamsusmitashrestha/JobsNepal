@@ -1,9 +1,9 @@
 {% load  static  %}
-<DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Jobs Nepal</title>
-	<link rel="stylesheet" type="text/css" href="{static '/css/signup.css' }">
+	<link rel="stylesheet" type="text/css" href="{% static '/css/signup.css' %}">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,10 +14,12 @@
 		<div class="img">
 			<img src="{% static 'img/002.svg' %}">
 		</div>
+		
 		<div class="login-content">
+			
 			<form id="Form1" method="POST">
 			{% csrf_token %}
-				<img src="{% static 'img/avatar.svg' %}">
+				
 				<h2 class="title">signup</h2>
            		<div class="input-div one">
            		   <div class="i">
@@ -39,10 +41,19 @@
 				   </div>
 				   <div class="input-div three">
 					<div class="i">
-						<i class="fas fa-calendar"></i>
+						<i class="fas fa-user"></i>
 					</div>
 					<div class="div">
-					 <h5>Age</h5>
+					 <h5>Full Name</h5>
+					 {{form.username}}
+					</div>
+				</div>
+				   <div class="input-div four">
+					<div class="i">
+						<i class="fas fa-phone"></i>
+					</div>
+					<div class="div">
+					 <h5>Phone Number</h5>
 					 {{form.age}}
 				 </div>
 				</div>
@@ -70,6 +81,6 @@
             </form>
         </div>
     </div>
-    <script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
